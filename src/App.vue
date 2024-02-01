@@ -1,30 +1,36 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <header-component></header-component>
   <router-view/>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import headerComponent from "@/components/header/headerComponent";
+export default {
+  components: {
+    headerComponent
   }
+}
+</script>
+<style lang="scss">
+:root{
+  --color1: #242582;
+  --color2: #553D67;
+  --color3: #F64C72 ;
+  --color4: #99738E ;
+  --color5: #2F2FA2 ;
+}
+.bg1{
+  background-color: var(--color1);
+}
+.bg3{
+  background-color: var(--color3);
+}
+.bg-grad15{
+  background: linear-gradient(to right, var(--color1) 0%, var(--color5) 100%);
+}
+.bg-grad34{
+  background: linear-gradient(to right, var(--color3) 0%, var(--color4) 100%);
+}
+a {
+  text-decoration: none;
 }
 </style>
